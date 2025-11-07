@@ -35,9 +35,6 @@ export default function TodoList({
             >
               {todo.completed ? "✓" : "○"}
             </button>
-            <button className="view-btn" onClick={() => onView(todo.id)}>
-              VIEW
-            </button>
             <button className="delete-btn" onClick={() => onDelete(todo.id)}>
               DELETE
             </button>

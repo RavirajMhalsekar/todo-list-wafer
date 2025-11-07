@@ -1,141 +1,36 @@
-# Todo List App with Next.js and Firebase
-
-A modern, responsive Todo List application built with Next.js 13+ (App Router), TypeScript, and Firebase. Features include user authentication, real-time updates, and a clean, intuitive interface.
-
-## Features
-
-- 🔐 User Authentication with Firebase
-- ✨ Modern UI with a dark theme
-- 📱 Fully Responsive Design
-- ✅ Create, Read, Update, and Delete Todos
-- 🔍 Search and Filter Todos
-- 🔄 Real-time Updates
-- 📝 Rich Text Description
-- 🎯 Mark Todos as Complete/Incomplete
-
-## Tech Stack
-
-- **Frontend Framework**: Next.js 13+ (App Router)
-- **Language**: TypeScript
-- **Authentication**: Firebase Auth
-- **Database**: Firebase Firestore
-- **Styling**: CSS Modules
-- **Hosting**: Vercel (recommended)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-Before you begin, ensure you have the following installed:
-- Node.js (v16.x or higher)
-- npm or yarn
-- Git
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/RavirajMhalsekar/todo-list-wafer.git
-cd todo-list-wafer
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-# or
-yarn install
-```
-
-### 3. Firebase Setup
-
-1. Go to [Firebase Console](https://console.firebase.google.com/)
-2. Create a new project
-3. Enable Authentication (Email/Password and Google Sign-in)
-4. Create a Firestore database
-5. Get your Firebase configuration:
-   - Go to Project Settings
-   - Scroll down to "Your apps"
-   - Click on the Web icon (</>)
-   - Register your app
-   - Copy the Firebase configuration object
-
-### 4. Environment Variables
-
-1. Copy the `.env.example` file to `.env.local`:
-```bash
-cp .env.example .env.local
-```
-
-2. Fill in your Firebase configuration values in `.env.local`:
-```
-NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project-id.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project-id.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
-NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
-```
-
-### 5. Run the Development Server
+First, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Project Structure
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```
-todo-list-wafer/
-├── app/                    # Next.js app directory
-│   ├── components/        # Reusable components
-│   ├── contexts/         # React contexts
-│   ├── add-todo/        # Add todo page
-│   ├── auth/            # Authentication page
-│   ├── todo/            # Individual todo page
-│   └── page.tsx         # Home page
-├── firebase/             # Firebase configuration and utilities
-├── public/              # Static assets
-└── types/               # TypeScript type definitions
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Core Features
+## Learn More
 
-### Authentication
-- Email/Password authentication
-- Google Sign-in
-- Protected routes
-- Persistent authentication state
+To learn more about Next.js, take a look at the following resources:
 
-### Todo Management
-- Create new todos with title and description
-- Mark todos as complete/incomplete
-- Delete todos
-- View detailed todo information
-- Search and filter todos
-- Sort by date or title
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Real-time Updates
-- Changes are reflected immediately
-- Firestore real-time listeners
-- Optimistic UI updates
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deployment
+## Deploy on Vercel
 
-### Deploy to Vercel
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-The easiest way to deploy this app is to use [Vercel](https://vercel.com):
-
-1. Push your code to a Git repository
-2. Import your project to Vercel
-3. Add your environment variables in the Vercel project settings
-4. Deploy!
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Support
-
-If you have any questions or need help, please open an issue in the repository.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
