@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "./contexts/AuthContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +25,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                (function() {
+                  const removeAttrs = [
+                    'data-new-gr-c-s-check-loaded',
+                    'data-gr-ext-installed',
+                    'data-gr-ext-disabled'
+                  ];
+                  const removeFromEl = (el) => {
+                    if (!el) return;
+                    removeAttrs.forEach(attr => el.removeAttribute(attr));
+                  };
+                  // Run immediately
+                  removeFromEl(document.documentElement);
+                  removeFromEl(document.body);
+                  // Also run on load to catch any late additions
+                  window.addEventListener('load', () => {
+                    removeFromEl(document.documentElement);
+                    removeFromEl(document.body);
+                  });
+                })();
+              } catch(e) {};
+            `,
+          }}
+        />
+      </head>
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
